@@ -1,11 +1,23 @@
-package com.udea.hero.api.tourofheroes.dto;
+package com.udea.hero.api.tourofheroes.model;
 
-public class HeroDto {
-    
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="heroes")
+public class Hero {
+
+
+
+    @Id
+    @Column(name="id")
     private int id;
     private String name ;
 
-    public HeroDto(int id,String name)
+    public Hero(){};
+    public Hero(int id,String name)
     {
         this.id=id;
         this.name=name;
@@ -24,4 +36,3 @@ public class HeroDto {
         this.name = name;
     }
 }
-   
