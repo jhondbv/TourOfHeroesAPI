@@ -23,4 +23,11 @@ public class HeroService {
     public List<Hero> getHeroes() {
         return heroRepository.findAll();
     }
+
+    public void createorUpdateHero(Hero hero)
+    {
+        heroRepository.save(hero);
+    }
+
+  
 }

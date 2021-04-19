@@ -2,7 +2,10 @@ package com.udea.hero.api.tourofheroes.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -13,11 +16,13 @@ public class Hero {
 
     @Id
     @Column(name="id")
-    private int id;
+    @SequenceGenerator(name="hero_sequence",sequenceName = "hero_sequence",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "hero_sequence")
+    private Integer id;
     private String name ;
 
     public Hero(){};
-    public Hero(int id,String name)
+    public Hero(Integer id,String name)
     {
         this.id=id;
         this.name=name;
