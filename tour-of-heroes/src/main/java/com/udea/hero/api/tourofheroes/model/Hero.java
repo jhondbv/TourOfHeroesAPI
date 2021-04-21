@@ -28,11 +28,11 @@ public class Hero {
         this.name=name;
     }
 
-    public int getNumber() {
+    public int getId() {
         return id;
     }
-    public void setNumber(int number) {
-        this.id = number;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public String getName() {
         return name;
